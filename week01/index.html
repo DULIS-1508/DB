@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Week 01 과제 | 데이터베이스 실습</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <header class="site">
+    <div class="wrap">
+      <h1>Week 01 · 오리엔테이션과 첫 SELECT</h1>
+      <p>도서관 DB 불러오기 · 데이터 조회의 첫걸음</p>
+      <nav class="site">
+        <a href="../index.html">HOME</a>
+        <a href="../guide.html">실습 안내</a>
+        <a href="../db/library_schema.sql">도서관 DB 내려받기</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2>학습 목표</h2>
+      <ul>
+        <li>도서관 데이터베이스를 실습 환경에 불러올 수 있다.</li>
+        <li><code>SELECT ... FROM ...</code> 구문으로 테이블 전체를 조회할 수 있다.</li>
+        <li>필요한 열만 선택해서 조회할 수 있다.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>준비</h2>
+      <p><a href="../guide.html">실습 안내</a>를 참고해 <a href="../db/library_schema.sql">library_schema.sql</a>을
+        불러온 뒤, 아래 쿼리로 데이터가 준비됐는지 확인하세요.</p>
+      <pre><code>SELECT COUNT(*) FROM member;  -- 15 이면 정상</code></pre>
+    </section>
+
+    <section>
+      <h2>실습 과제</h2>
+      <div class="callout">
+        아래 <strong>4문제</strong>를 풉니다. <code>week01/answer.sql</code> 파일에
+        문제 번호와 함께 SQL을 작성하고, 실행 결과를 캡처해 제출하세요.
+      </div>
+
+      <h3>문제 1. 회원 전체 조회</h3>
+      <p><code>member</code> 테이블의 <strong>모든 열, 모든 행</strong>을 조회하세요.</p>
+
+      <h3>문제 2. 도서 제목과 저자만 조회</h3>
+      <p><code>book</code> 테이블에서 <strong>제목(title)과 저자(author)</strong> 두 열만 조회하세요.</p>
+
+      <h3>문제 3. 출판사 목록 (중복 없이)</h3>
+      <p><code>book</code> 테이블에 등장하는 <strong>출판사(publisher)</strong>를
+        <strong>중복 없이</strong> 조회하세요. <span class="tag">힌트: DISTINCT</span></p>
+
+      <h3>문제 4. 회원 이름과 학과에 별칭 붙이기</h3>
+      <p><code>member</code> 테이블에서 <code>name</code>은 <strong>이름</strong>,
+        <code>dept</code>는 <strong>학과</strong>라는 별칭(AS)으로 바꿔 조회하세요.
+        <span class="tag">힌트: AS</span></p>
+    </section>
+
+    <section>
+      <h2>제출</h2>
+      <p><code>week01/answer.sql</code>에 답을 작성 → 결과 캡처(<code>result.png</code>) 첨부 →
+        <strong>Commit &amp; Push</strong>. 자세한 방법은 <a href="../guide.html">실습 안내 3번</a>을 참고하세요.</p>
+      <p><a class="btn" href="answer.sql">answer.sql 템플릿 보기</a></p>
+    </section>
+  </main>
+
+  <footer class="site">
+    <small>2026 정보시스템개발(ISD) · 데이터베이스 실습 사이트</small>
+  </footer>
+</body>
+</html>

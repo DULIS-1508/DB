@@ -1,3 +1,194 @@
+/* =====================================================================
+   2026 정보시스템개발(ISD) - 데이터베이스 실습 사이트 공통 스타일
+   ===================================================================== */
+
+:root {
+  --bg:        #f5f7fa;
+  --card:      #ffffff;
+  --ink:       #1f2933;
+  --muted:     #6b7280;
+  --brand:     #1e6fd9;
+  --brand-dk:  #17539f;
+  --accent:    #0f9d8f;
+  --line:      #e3e8ef;
+  --code-bg:   #0f172a;
+  --code-ink:  #e2e8f0;
+  --radius:    12px;
+  --shadow:    0 1px 3px rgba(16,24,40,.06), 0 6px 16px rgba(16,24,40,.05);
+}
+
+* { box-sizing: border-box; }
+
 body {
-  font-family: sans-serif;
+  margin: 0;
+  font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.65;
+}
+
+/* ---- 헤더 ---- */
+header.site {
+  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dk) 100%);
+  color: #fff;
+  padding: 2.2rem 1.5rem 1.6rem;
+}
+header.site .wrap { max-width: 960px; margin: 0 auto; }
+header.site h1 { margin: 0 0 .3rem; font-size: 1.6rem; }
+header.site p  { margin: 0; opacity: .9; font-size: .95rem; }
+
+nav.site {
+  max-width: 960px;
+  margin: 1rem auto 0;
+  display: flex;
+  gap: .4rem;
+  flex-wrap: wrap;
+}
+nav.site a {
+  color: #fff;
+  text-decoration: none;
+  font-size: .9rem;
+  padding: .35rem .8rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,.14);
+  transition: background .15s;
+}
+nav.site a:hover { background: rgba(255,255,255,.28); }
+
+/* ---- 본문 ---- */
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+}
+
+section { margin-bottom: 2.2rem; }
+h2 {
+  font-size: 1.25rem;
+  border-left: 4px solid var(--brand);
+  padding-left: .6rem;
+  margin: 0 0 1rem;
+}
+h3 { font-size: 1.05rem; margin: 1.4rem 0 .6rem; }
+p  { margin: .5rem 0; }
+a  { color: var(--brand); }
+
+/* ---- 안내 박스 ---- */
+.callout {
+  background: #eef5ff;
+  border: 1px solid #cfe0fb;
+  border-radius: var(--radius);
+  padding: 1rem 1.2rem;
+  margin: 1rem 0;
+}
+.callout.warn { background: #fff7ed; border-color: #fed7aa; }
+.callout.ok   { background: #ecfdf5; border-color: #a7f3d0; }
+
+/* ---- 주차 카드 그리드 ---- */
+.week-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 1rem;
+}
+.week-card {
+  display: block;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem 1.1rem;
+  text-decoration: none;
+  color: var(--ink);
+  box-shadow: var(--shadow);
+  transition: transform .12s, box-shadow .12s, border-color .12s;
+}
+.week-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--brand);
+  box-shadow: 0 4px 10px rgba(16,24,40,.10), 0 12px 28px rgba(16,24,40,.08);
+}
+.week-card .no {
+  font-size: .78rem;
+  font-weight: 700;
+  color: var(--brand);
+  letter-spacing: .04em;
+}
+.week-card .topic { display: block; font-weight: 600; margin-top: .2rem; }
+.week-card .tag {
+  display: inline-block;
+  margin-top: .6rem;
+  font-size: .72rem;
+  color: var(--muted);
+  background: #f1f5f9;
+  border-radius: 999px;
+  padding: .12rem .55rem;
+}
+.week-card.exam { border-color: #f0b429; background: #fffbeb; }
+.week-card.exam .no { color: #b7791f; }
+
+/* ---- 표 ---- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: .92rem;
+  background: var(--card);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+th, td { padding: .6rem .8rem; text-align: left; border-bottom: 1px solid var(--line); }
+th { background: #f1f5f9; font-weight: 600; }
+tr:last-child td { border-bottom: none; }
+
+/* ---- 코드 ---- */
+code {
+  background: #eef2f7;
+  padding: .1rem .35rem;
+  border-radius: 5px;
+  font-family: "D2Coding", "Consolas", monospace;
+  font-size: .9em;
+}
+pre {
+  background: var(--code-bg);
+  color: var(--code-ink);
+  padding: 1rem 1.2rem;
+  border-radius: var(--radius);
+  overflow-x: auto;
+  font-size: .88rem;
+  line-height: 1.55;
+}
+pre code { background: none; padding: 0; color: inherit; }
+
+/* ---- 단계 목록 ---- */
+ol.steps { padding-left: 1.2rem; }
+ol.steps li { margin: .5rem 0; }
+
+/* ---- 버튼 ---- */
+.btn {
+  display: inline-block;
+  background: var(--brand);
+  color: #fff;
+  text-decoration: none;
+  padding: .5rem 1rem;
+  border-radius: 8px;
+  font-size: .9rem;
+  font-weight: 600;
+  transition: background .15s;
+}
+.btn:hover { background: var(--brand-dk); }
+.btn.ghost { background: transparent; color: var(--brand); border: 1px solid var(--brand); }
+
+/* ---- 푸터 ---- */
+footer.site {
+  border-top: 1px solid var(--line);
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: .85rem;
+}
+
+/* ---- 반응형 ---- */
+@media (max-width: 560px) {
+  header.site h1 { font-size: 1.35rem; }
+  main { padding: 1.5rem 1rem 2.5rem; }
 }

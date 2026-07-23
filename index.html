@@ -2,52 +2,141 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <title>나의 웹 포트폴리오</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>데이터베이스 실습 | 2026 정보시스템개발</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <header>
-    <h1>나의 웹 포트폴리오</h1>
-    <nav>
-      <a href="index.html">HOME</a>
-      <a href="about.html">ABOUT</a>
-      <a href="contact.html">CONTACT</a>
-    </nav>
+  <header class="site">
+    <div class="wrap">
+      <h1>데이터베이스 실습실</h1>
+      <p>2026 정보시스템개발(ISD) · MySQL로 배우는 데이터베이스 · 도서관 데이터 실습</p>
+      <nav class="site">
+        <a href="index.html">HOME</a>
+        <a href="guide.html">실습 안내</a>
+        <a href="db/library_schema.sql">도서관 DB 내려받기</a>
+      </nav>
+    </div>
   </header>
 
   <main>
     <section>
-      <h2>소개</h2>
+      <h2>수업 소개</h2>
       <p>
-        이 사이트는 15주차 동안 HTML, CSS, JavaScript를 학습하며
-        완성해 나가는 개인 웹사이트입니다.
+        이 수업은 <strong>MySQL</strong>을 사용하여 데이터베이스의 기본 개념과
+        SQL을 실습 중심으로 익힙니다. 매주 이론 강의 후 <strong>도서관 데이터베이스</strong>
+        (회원 · 도서 · 대출)를 소재로 직접 쿼리를 작성하고, 결과를 제출합니다.
       </p>
+      <div class="callout">
+        <strong>실습 흐름</strong> — ① 주차별 과제 페이지 확인 → ② 도서관 DB 불러오기 →
+        ③ SQL 작성·실행 → ④ <code>answer.sql</code> 제출 → ⑤ 교수 채점·피드백
+        <br />처음이라면 <a href="guide.html">실습 안내</a> 페이지를 먼저 읽어 주세요.
+      </div>
     </section>
 
     <section>
-      <h2>주차별 과제 바로가기</h2>
-      <ul>
-        <li><a href="week01/index.html">week01 과제</a></li>
-        <li><a href="week02/index.html">week02 과제</a></li>
-        <li><a href="week03/index.html">week03 과제</a></li>
-        <li><a href="week04/index.html">week04 과제</a></li>
-        <li><a href="week05/index.html">week05 과제</a></li>
-        <li><a href="week06/index.html">week06 과제</a></li>
-        <li><a href="week07/index.html">week07 과제</a></li>
-        <li><a href="week08/index.html">week08 (중간고사)</a></li>
-        <li><a href="week09/index.html">week09 과제</a></li>
-        <li><a href="week10/index.html">week10 과제</a></li>
-        <li><a href="week11/index.html">week11 과제</a></li>
-        <li><a href="week12/index.html">week12 과제</a></li>
-        <li><a href="week13/index.html">week13 과제</a></li>
-        <li><a href="week14/index.html">week14 과제</a></li>
-        <li><a href="week15/index.html">week15 (기말고사)</a></li>
-      </ul>
+      <h2>주차별 과제</h2>
+      <div class="week-grid">
+        <a class="week-card" href="week01/index.html">
+          <span class="no">WEEK 01</span>
+          <span class="topic">오리엔테이션 · 환경 설정</span>
+          <span class="tag">첫 SELECT</span>
+        </a>
+        <a class="week-card" href="week02/index.html">
+          <span class="no">WEEK 02</span>
+          <span class="topic">SELECT 기본 · 열 선택</span>
+          <span class="tag">SELECT</span>
+        </a>
+        <a class="week-card" href="week03/index.html">
+          <span class="no">WEEK 03</span>
+          <span class="topic">WHERE 조건 · 정렬</span>
+          <span class="tag">WHERE / ORDER BY</span>
+        </a>
+        <a class="week-card" href="week04/index.html">
+          <span class="no">WEEK 04</span>
+          <span class="topic">집계 함수</span>
+          <span class="tag">COUNT / SUM / AVG</span>
+        </a>
+        <a class="week-card" href="week05/index.html">
+          <span class="no">WEEK 05</span>
+          <span class="topic">그룹화</span>
+          <span class="tag">GROUP BY / HAVING</span>
+        </a>
+        <a class="week-card" href="week06/index.html">
+          <span class="no">WEEK 06</span>
+          <span class="topic">조인 (1) 내부 조인</span>
+          <span class="tag">INNER JOIN</span>
+        </a>
+        <a class="week-card" href="week07/index.html">
+          <span class="no">WEEK 07</span>
+          <span class="topic">조인 (2) 외부 조인</span>
+          <span class="tag">LEFT JOIN</span>
+        </a>
+        <a class="week-card exam" href="week08/index.html">
+          <span class="no">WEEK 08</span>
+          <span class="topic">중간고사</span>
+          <span class="tag">종합 실습</span>
+        </a>
+        <a class="week-card" href="week09/index.html">
+          <span class="no">WEEK 09</span>
+          <span class="topic">서브쿼리 (1)</span>
+          <span class="tag">Subquery</span>
+        </a>
+        <a class="week-card" href="week10/index.html">
+          <span class="no">WEEK 10</span>
+          <span class="topic">서브쿼리 (2) · IN/EXISTS</span>
+          <span class="tag">IN / EXISTS</span>
+        </a>
+        <a class="week-card" href="week11/index.html">
+          <span class="no">WEEK 11</span>
+          <span class="topic">데이터 조작</span>
+          <span class="tag">INSERT / UPDATE / DELETE</span>
+        </a>
+        <a class="week-card" href="week12/index.html">
+          <span class="no">WEEK 12</span>
+          <span class="topic">테이블 설계 · 제약조건</span>
+          <span class="tag">DDL</span>
+        </a>
+        <a class="week-card" href="week13/index.html">
+          <span class="no">WEEK 13</span>
+          <span class="topic">정규화</span>
+          <span class="tag">Normalization</span>
+        </a>
+        <a class="week-card" href="week14/index.html">
+          <span class="no">WEEK 14</span>
+          <span class="topic">미니 프로젝트</span>
+          <span class="tag">종합 설계</span>
+        </a>
+        <a class="week-card exam" href="week15/index.html">
+          <span class="no">WEEK 15</span>
+          <span class="topic">기말고사</span>
+          <span class="tag">종합 실습</span>
+        </a>
+      </div>
+    </section>
+
+    <section>
+      <h2>도서관 데이터베이스</h2>
+      <p>모든 실습은 아래 세 개의 표(테이블)를 사용합니다.</p>
+      <table>
+        <thead>
+          <tr><th>테이블</th><th>설명</th><th>주요 열</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>member</code></td><td>도서관 회원</td><td>member_id, name, dept, member_type, join_date</td></tr>
+          <tr><td><code>book</code></td><td>소장 도서</td><td>book_id, title, author, publisher, pub_year, category</td></tr>
+          <tr><td><code>loan</code></td><td>대출 기록</td><td>loan_id, member_id, book_id, loan_date, due_date, return_date</td></tr>
+        </tbody>
+      </table>
+      <p>
+        <a class="btn" href="db/library_schema.sql">library_schema.sql 내려받기</a>
+        <a class="btn ghost" href="guide.html">불러오는 방법 보기</a>
+      </p>
     </section>
   </main>
 
-  <footer>
-    <small>2026 정보시스템개발 수업</small>
+  <footer class="site">
+    <small>2026 정보시스템개발(ISD) · 데이터베이스 실습 사이트</small>
   </footer>
 </body>
 </html>
