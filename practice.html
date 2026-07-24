@@ -65,6 +65,9 @@
       <p class="muted-hint">
         ※ 브라우저 안에서 도는 SQL 엔진을 씁니다. SELECT·WHERE·JOIN·GROUP BY·서브쿼리 등은
         <strong>MySQL과 문법이 동일</strong>합니다. 과제 제출은 안내대로 MySQL 기준으로 진행하세요.
+        <br />※ SQL은 <strong>대소문자를 구분하지 않습니다</strong> — <code>SELECT</code>·<code>select</code>,
+        <code>burgers</code>·<code>BURGERS</code> 모두 동일하게 동작합니다.
+        (교재는 명령어와 데이터명을 구분해 보여주려고 일부러 대소문자를 나눠 표기합니다.)
       </p>
     </section>
 
@@ -555,7 +558,13 @@ VALUES
     function runSql(){
       const sql=$("sql").value.trim(); if(!sql)return;
       try{ renderResult(db.exec(sql)); }
-      catch(e){ $("result-area").innerHTML='<div class="err">⚠ 오류: '+escapeHtml(e.message)+'\n\n힌트: 오타·따옴표·세미콜론(;)과 표 이름을 확인하세요.</div>'; }
+      catch(e){
+        let hint='힌트: 오타·따옴표·세미콜론(;)을 확인하세요. (SQL은 대소문자를 구분하지 않습니다.)';
+        const tbls=DATASETS[current].tables.join(', ');
+        if(/no such table/i.test(e.message)) hint='힌트: 표 이름 철자를 확인하세요. 이 데이터셋에서 쓸 수 있는 표 → '+tbls;
+        else if(/no such column/i.test(e.message)) hint='힌트: 열(칼럼) 이름 철자를 확인하세요.';
+        $("result-area").innerHTML='<div class="err">⚠ 오류: '+escapeHtml(e.message)+'\n\n'+escapeHtml(hint)+'</div>';
+      }
     }
     function loadExamples(key){
       const ex=$("examples"); ex.innerHTML='';
