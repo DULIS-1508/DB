@@ -10,9 +10,10 @@
   <header class="site">
     <div class="wrap">
       <h1>데이터베이스 실습실</h1>
-      <p>2026 정보시스템개발(ISD) · MySQL로 배우는 데이터베이스 · 도서관 데이터 실습</p>
+      <p>MySQL로 배우는 데이터베이스 · 도서관 데이터 실습</p>
       <nav class="site">
         <a href="index.html">HOME</a>
+        <a href="practice.html">웹에서 SQL 연습</a>
         <a href="student-guide.html">실습 가이드</a>
         <a href="guide.html">환경·제출 안내</a>
         <a href="db/library_schema.sql">도서관 DB 내려받기</a>
@@ -22,17 +23,44 @@
 
   <main>
     <section>
-      <h2>수업 소개</h2>
+      <h2>이 수업은 무엇을 하나요?</h2>
       <p>
-        이 수업은 <strong>MySQL</strong>을 사용하여 데이터베이스의 기본 개념과
-        SQL을 실습 중심으로 익힙니다. 매주 이론 강의 후 <strong>도서관 데이터베이스</strong>
-        (회원 · 도서 · 대출)를 소재로 직접 쿼리를 작성하고, 결과를 제출합니다.
+        우리는 <strong>데이터베이스</strong>를 배웁니다. 데이터베이스는
+        <strong>"많은 정보를 표로 잘 정리해 두고, 필요한 것만 빠르게 찾아내는 도구"</strong>예요.
+        도서관을 떠올려 보세요 — 수천 권의 책 중에서 "2023년에 나온 컴퓨터 책"만 골라내려면
+        일일이 넘겨보는 대신, <strong>SQL</strong>이라는 언어로 딱 한 줄 물어보면 됩니다.
       </p>
+
       <div class="callout">
-        <strong>실습 흐름</strong> — ① 주차별 과제 페이지 확인 → ② 도서관 DB 불러오기 →
-        ③ SQL 작성·실행 → ④ <code>answer.sql</code> 제출 → ⑤ 교수 채점·피드백
-        <br />데이터베이스가 처음이라면 <a href="student-guide.html"><strong>학생용 실습 가이드</strong></a>를 먼저 읽어 주세요.
-        환경 준비·제출 방법은 <a href="guide.html">환경·제출 안내</a>에 있습니다.
+        <strong>왜 배우나요? · 무엇에 쓰나요? · 무엇이 좋아지나요?</strong>
+        <ul>
+          <li><strong>왜</strong> — 도서관·쇼핑몰·학교 시스템 등 거의 모든 서비스는 데이터베이스 위에서 돌아갑니다.
+            정보를 다루는 사람에게 꼭 필요한 기본기예요.</li>
+          <li><strong>목적</strong> — 표에서 원하는 정보를 <strong>정확하고 빠르게 꺼내는 방법(SQL)</strong>을 익히는 것.</li>
+          <li><strong>장점</strong> — 엑셀로 며칠 걸릴 일을 몇 초 만에 끝낼 수 있고,
+            "어떤 책이 가장 인기 있나?" 같은 질문에 <strong>데이터로 답</strong>할 수 있게 됩니다.</li>
+        </ul>
+      </div>
+
+      <p>
+        어렵지 않습니다. 매주 짧은 강의 뒤에 <strong>도서관 데이터</strong>(회원 · 도서 · 대출)로
+        직접 한두 문제를 풀어 보는 방식이라, <strong>따라 하다 보면 자연스럽게 익숙해집니다.</strong>
+      </p>
+
+      <div class="callout ok">
+        🖥️ <strong>설치할 필요 없어요.</strong> 아래 <a href="practice.html"><strong>웹에서 SQL 연습</strong></a> 페이지에서는
+        코드를 입력하면 <strong>같은 화면에서 바로 결과가 나옵니다.</strong> 프로그램을 따로 켤 필요가 없어요.
+        <br />처음이라면 <a href="student-guide.html"><strong>학생용 실습 가이드</strong></a>를 먼저 읽어 보세요.
+      </div>
+
+      <p style="margin-top:1rem">
+        <a class="btn" href="practice.html">웹에서 SQL 바로 연습하기 →</a>
+        <a class="btn ghost" href="student-guide.html">처음이에요, 가이드 보기</a>
+      </p>
+
+      <div class="callout">
+        <strong>수업이 진행되는 흐름</strong> — ① 주차별 과제 확인 → ② 웹 연습창(또는 MySQL)에서 SQL 작성·실행 →
+        ③ 결과 확인 → ④ <code>answer.sql</code> 제출 → ⑤ 교수님 채점·피드백
       </div>
     </section>
 
@@ -138,7 +166,7 @@
   </main>
 
   <footer class="site">
-    <small>2026 정보시스템개발(ISD) · 데이터베이스 실습 사이트</small>
+    <small>데이터베이스 실습 사이트</small>
   </footer>
 </body>
 </html>
