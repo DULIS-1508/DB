@@ -9,10 +9,11 @@
 <body>
   <header class="site">
     <div class="wrap">
-      <h1>Week 02 · SELECT 기본과 열 선택</h1>
-      <p>필요한 열만, 중복 없이, 원하는 만큼 조회하기</p>
+      <h1>Week 02 · 데이터 CRUD (생성·조회·수정·삭제)</h1>
+      <p>2장 · 데이터를 넣고(Create) 꺼내고(Read) 고치고(Update) 지우기(Delete)</p>
       <nav class="site">
         <a href="../index.html">HOME</a>
+        <a href="../practice.html">웹에서 SQL 연습</a>
         <a href="../student-guide.html">실습 가이드</a>
         <a href="../guide.html">환경·제출 안내</a>
         <a href="../db/library_schema.sql">도서관 DB 내려받기</a>
@@ -24,39 +25,40 @@
     <section>
       <h2>학습 목표</h2>
       <ul>
-        <li>특정 열만 골라서 조회할 수 있다.</li>
-        <li><code>DISTINCT</code>로 중복을 없애고, <code>AS</code>로 별칭을 붙일 수 있다.</li>
-        <li><code>LIMIT</code>으로 결과 개수를 제한할 수 있다.</li>
+        <li><code>INSERT</code>로 새 데이터를 넣을 수 있다.</li>
+        <li><code>UPDATE</code>·<code>DELETE</code>로 데이터를 수정·삭제할 수 있다.</li>
+        <li><code>WHERE</code>로 대상을 정확히 지정할 수 있다.</li>
       </ul>
     </section>
 
     <section>
       <h2>준비</h2>
-      <p><a href="../guide.html">실습 안내</a>를 참고해 <a href="../db/library_schema.sql">도서관 DB</a>를 불러온 뒤 시작하세요.
-        표 구조가 기억나지 않으면 <a href="../student-guide.html">실습 가이드</a>의 "우리가 쓸 표 3개"를 참고하세요.</p>
+      <p><a href="../practice.html">웹에서 SQL 연습</a>에서 <strong>도서관 DB</strong>를 골라 바로 실습할 수 있습니다.
+        표 구조는 <a href="../student-guide.html">실습 가이드</a>를 참고하세요.</p>
+      <div class="callout">연습창에서 데이터를 바꿔도 새로고침하면 되돌아옵니다. 마음껏 실습하세요.</div>
     </section>
 
     <section>
       <h2>실습 과제</h2>
       <div class="callout">
-        아래 문제를 풉니다. <code>week02/answer.sql</code> 파일에 문제 번호와 함께 SQL을 작성하고,
+        아래 문제를 풀어 <code>week02/answer.sql</code>에 문제 번호와 함께 SQL을 작성하고,
         실행 결과를 캡처해 제출하세요.
       </div>
 
       <h3>문제 1</h3>
-      <p><code>book</code> 테이블의 <strong>모든 열, 모든 행</strong>을 조회하세요. <span class="tag">힌트: SELECT *</span></p>
+      <p>본인을 회원으로 <code>member</code>에 <strong>INSERT</strong> 하세요. (이름은 자유, 학과·유형·이메일·가입일 포함) <span class="tag">힌트: INSERT INTO member (열목록) VALUES (값)</span></p>
 
       <h3>문제 2</h3>
-      <p><code>book</code>에서 <strong>제목(title), 저자(author), 출판연도(pub_year)</strong> 세 열만 조회하세요. <span class="tag">힌트: 필요한 열만 콤마로 나열</span></p>
+      <p>방금 넣은 회원이 잘 들어갔는지 <strong>SELECT</strong>로 확인하세요. <span class="tag">힌트: WHERE name = '...'</span></p>
 
       <h3>문제 3</h3>
-      <p><code>member</code>에 등장하는 <strong>학과(dept)</strong>를 <strong>중복 없이</strong> 조회하세요. <span class="tag">힌트: DISTINCT</span></p>
+      <p>도서 '소나기'의 소장 부수(<code>total_copies</code>)를 <strong>1 증가</strong>시키세요. (UPDATE) <span class="tag">힌트: SET total_copies = total_copies + 1 WHERE title = '소나기'</span></p>
 
       <h3>문제 4</h3>
-      <p><code>book</code>의 <strong>카테고리(category)</strong>를 <strong>중복 없이</strong> 조회하세요. <span class="tag">힌트: DISTINCT</span></p>
+      <p><code>loan_id</code>가 6인 대출을 <strong>반납 처리</strong>하세요. (return_date를 오늘로 UPDATE) <span class="tag">힌트: SET return_date = '2026-07-24' WHERE loan_id = 6</span></p>
 
       <h3>문제 5</h3>
-      <p><code>book</code>에서 <code>title</code>을 <strong>도서명</strong>, <code>pub_year</code>를 <strong>출판연도</strong>라는 별칭으로 바꾸고, <strong>앞에서 10건만</strong> 조회하세요. <span class="tag">힌트: AS 별칭 + LIMIT</span></p>
+      <p>문제 1에서 넣은 본인 회원을 다시 <strong>DELETE</strong>로 삭제하세요. <span class="tag">힌트: DELETE FROM member WHERE name = '...'</span></p>
     </section>
 
     <section>
@@ -67,8 +69,6 @@
     </section>
   </main>
 
-  <footer class="site">
-    <small>2026 정보시스템개발(ISD) · 데이터베이스 실습 사이트</small>
-  </footer>
+  <footer class="site"><small>데이터베이스 실습 사이트</small></footer>
 </body>
 </html>

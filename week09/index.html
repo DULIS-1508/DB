@@ -9,10 +9,11 @@
 <body>
   <header class="site">
     <div class="wrap">
-      <h1>Week 09 · 서브쿼리 (1)</h1>
-      <p>도서관 데이터베이스 실습</p>
+      <h1>Week 09 · 그룹화 분석</h1>
+      <p>8장 · 묶어서 집계하고(GROUP BY), 묶은 결과에 조건 걸기(HAVING)</p>
       <nav class="site">
         <a href="../index.html">HOME</a>
+        <a href="../practice.html">웹에서 SQL 연습</a>
         <a href="../student-guide.html">실습 가이드</a>
         <a href="../guide.html">환경·제출 안내</a>
         <a href="../db/library_schema.sql">도서관 DB 내려받기</a>
@@ -22,18 +23,51 @@
 
   <main>
     <section>
-      <h2>안내</h2>
-      <div class="callout warn">
-        이 주차의 과제는 <strong>준비 중</strong>입니다. 강의 진행에 맞춰 교재 챕터와 함께 업데이트됩니다.
+      <h2>학습 목표</h2>
+      <ul>
+        <li><code>GROUP BY</code>로 그룹별 집계를 할 수 있다.</li>
+        <li><code>HAVING</code>으로 그룹에 조건을 걸 수 있다.</li>
+        <li>집계 결과를 정렬·제한할 수 있다.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>준비</h2>
+      <p><a href="../practice.html">웹에서 SQL 연습</a>에서 <strong>도서관 DB</strong>를 골라 바로 실습할 수 있습니다.
+        표 구조는 <a href="../student-guide.html">실습 가이드</a>를 참고하세요.</p>
+    </section>
+
+    <section>
+      <h2>실습 과제</h2>
+      <div class="callout">
+        아래 문제를 풀어 <code>week09/answer.sql</code>에 문제 번호와 함께 SQL을 작성하고,
+        실행 결과를 캡처해 제출하세요.
       </div>
-      <p>실습 소재는 공통 <a href="../db/library_schema.sql">도서관 데이터베이스</a>를 사용합니다.
-        제출 방법은 <a href="../guide.html">실습 안내</a>를 참고하세요.</p>
+
+      <h3>문제 1</h3>
+      <p><strong>카테고리별 도서 수</strong>를 구하세요. <span class="tag">힌트: GROUP BY category</span></p>
+
+      <h3>문제 2</h3>
+      <p><strong>출판사별 도서 수</strong>를 많은 순으로 조회하세요. <span class="tag">힌트: GROUP BY publisher, ORDER BY ... DESC</span></p>
+
+      <h3>문제 3</h3>
+      <p><strong>회원 유형별 인원 수</strong>를 구하세요. <span class="tag">힌트: GROUP BY member_type</span></p>
+
+      <h3>문제 4</h3>
+      <p>도서가 <strong>4권 이상</strong>인 카테고리만 조회하세요. <span class="tag">힌트: HAVING COUNT(*) &gt;= 4</span></p>
+
+      <h3>문제 5</h3>
+      <p><strong>회원별 대출 건수</strong>를 많은 순으로 상위 5명 조회하세요. <span class="tag">힌트: GROUP BY member_id, ORDER BY ... DESC LIMIT 5</span></p>
+    </section>
+
+    <section>
+      <h2>제출</h2>
+      <p><code>week09/answer.sql</code>에 답을 작성 → 결과 캡처(<code>result.png</code>) 첨부 →
+        <strong>Commit &amp; Push</strong>. 자세한 방법은 <a href="../guide.html">환경·제출 안내</a>를 참고하세요.</p>
       <p><a class="btn ghost" href="../index.html">← 전체 주차로 돌아가기</a></p>
     </section>
   </main>
 
-  <footer class="site">
-    <small>2026 정보시스템개발(ISD) · 데이터베이스 실습 사이트</small>
-  </footer>
+  <footer class="site"><small>데이터베이스 실습 사이트</small></footer>
 </body>
 </html>

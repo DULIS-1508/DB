@@ -9,10 +9,11 @@
 <body>
   <header class="site">
     <div class="wrap">
-      <h1>Week 03 · WHERE 조건과 정렬</h1>
-      <p>조건으로 걸러내고 원하는 순서로 줄 세우기</p>
+      <h1>Week 03 · 데이터 필터링</h1>
+      <p>3장 · WHERE로 조건에 맞는 행만 골라내고, 정렬하기</p>
       <nav class="site">
         <a href="../index.html">HOME</a>
+        <a href="../practice.html">웹에서 SQL 연습</a>
         <a href="../student-guide.html">실습 가이드</a>
         <a href="../guide.html">환경·제출 안내</a>
         <a href="../db/library_schema.sql">도서관 DB 내려받기</a>
@@ -24,36 +25,36 @@
     <section>
       <h2>학습 목표</h2>
       <ul>
-        <li><code>WHERE</code>로 조건에 맞는 행만 조회할 수 있다.</li>
-        <li><code>LIKE</code>, <code>BETWEEN</code>, <code>IN</code>으로 다양한 조건을 표현할 수 있다.</li>
-        <li><code>ORDER BY</code>로 오름차순/내림차순 정렬할 수 있다.</li>
+        <li><code>WHERE</code>와 비교·논리 연산자로 조건을 표현할 수 있다.</li>
+        <li><code>LIKE</code>·<code>BETWEEN</code>·<code>IN</code>을 사용할 수 있다.</li>
+        <li><code>ORDER BY</code>로 정렬할 수 있다.</li>
       </ul>
     </section>
 
     <section>
       <h2>준비</h2>
-      <p><a href="../guide.html">실습 안내</a>를 참고해 <a href="../db/library_schema.sql">도서관 DB</a>를 불러온 뒤 시작하세요.
-        표 구조가 기억나지 않으면 <a href="../student-guide.html">실습 가이드</a>의 "우리가 쓸 표 3개"를 참고하세요.</p>
+      <p><a href="../practice.html">웹에서 SQL 연습</a>에서 <strong>도서관 DB</strong>를 골라 바로 실습할 수 있습니다.
+        표 구조는 <a href="../student-guide.html">실습 가이드</a>를 참고하세요.</p>
     </section>
 
     <section>
       <h2>실습 과제</h2>
       <div class="callout">
-        아래 문제를 풉니다. <code>week03/answer.sql</code> 파일에 문제 번호와 함께 SQL을 작성하고,
+        아래 문제를 풀어 <code>week03/answer.sql</code>에 문제 번호와 함께 SQL을 작성하고,
         실행 결과를 캡처해 제출하세요.
       </div>
 
       <h3>문제 1</h3>
-      <p><strong>카테고리가 '컴퓨터'</strong>인 도서의 <strong>제목과 저자</strong>를 조회하세요. <span class="tag">힌트: WHERE category = '컴퓨터'</span></p>
+      <p>카테고리가 <strong>'컴퓨터'</strong>인 도서의 제목과 저자를 조회하세요. <span class="tag">힌트: WHERE category = '컴퓨터'</span></p>
 
       <h3>문제 2</h3>
-      <p><strong>2020년(포함) 이후</strong>에 출판된 도서를 <strong>출판연도 내림차순</strong>으로 조회하세요. <span class="tag">힌트: WHERE pub_year &gt;= 2020, ORDER BY ... DESC</span></p>
+      <p><strong>2020년(포함) 이후</strong> 출판된 도서를 출판연도 내림차순으로 조회하세요. <span class="tag">힌트: WHERE pub_year &gt;= 2020, ORDER BY ... DESC</span></p>
 
       <h3>문제 3</h3>
-      <p>제목에 <strong>'데이터'</strong>가 들어간 도서의 제목을 조회하세요. <span class="tag">힌트: LIKE '%데이터%'</span></p>
+      <p>제목에 <strong>'데이터'</strong>가 포함된 도서를 조회하세요. <span class="tag">힌트: LIKE '%데이터%'</span></p>
 
       <h3>문제 4</h3>
-      <p>출판연도가 <strong>2015년부터 2020년 사이</strong>인 도서를 <strong>출판연도 오름차순</strong>으로 조회하세요. <span class="tag">힌트: BETWEEN 2015 AND 2020</span></p>
+      <p>출판연도가 <strong>2015~2020</strong>인 도서를 오름차순으로 조회하세요. <span class="tag">힌트: BETWEEN 2015 AND 2020</span></p>
 
       <h3>문제 5</h3>
       <p>카테고리가 <strong>'문학' 또는 '역사'</strong>인 도서의 제목과 카테고리를 조회하세요. <span class="tag">힌트: IN ('문학','역사')</span></p>
@@ -67,8 +68,6 @@
     </section>
   </main>
 
-  <footer class="site">
-    <small>2026 정보시스템개발(ISD) · 데이터베이스 실습 사이트</small>
-  </footer>
+  <footer class="site"><small>데이터베이스 실습 사이트</small></footer>
 </body>
 </html>

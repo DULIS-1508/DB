@@ -9,10 +9,11 @@
 <body>
   <header class="site">
     <div class="wrap">
-      <h1>Week 05 · 그룹화 (GROUP BY · HAVING)</h1>
-      <p>묶어서 세고, 묶은 결과에 조건 걸기</p>
+      <h1>Week 05 · 다양한 자료형 활용</h1>
+      <p>5장 · 숫자·문자·날짜형 데이터를 조건으로 다루기</p>
       <nav class="site">
         <a href="../index.html">HOME</a>
+        <a href="../practice.html">웹에서 SQL 연습</a>
         <a href="../student-guide.html">실습 가이드</a>
         <a href="../guide.html">환경·제출 안내</a>
         <a href="../db/library_schema.sql">도서관 DB 내려받기</a>
@@ -24,39 +25,40 @@
     <section>
       <h2>학습 목표</h2>
       <ul>
-        <li><code>GROUP BY</code>로 그룹별 집계를 할 수 있다.</li>
-        <li>집계 결과를 정렬할 수 있다.</li>
-        <li><code>HAVING</code>으로 그룹에 조건을 걸 수 있다.</li>
+        <li>문자열을 <code>LIKE</code>로 부분 검색할 수 있다.</li>
+        <li>날짜를 <code>BETWEEN</code>·<code>MONTH()</code> 등으로 다룰 수 있다.</li>
+        <li><code>IS NULL</code>로 빈 값을 구분할 수 있다.</li>
       </ul>
     </section>
 
     <section>
       <h2>준비</h2>
-      <p><a href="../guide.html">실습 안내</a>를 참고해 <a href="../db/library_schema.sql">도서관 DB</a>를 불러온 뒤 시작하세요.
-        표 구조가 기억나지 않으면 <a href="../student-guide.html">실습 가이드</a>의 "우리가 쓸 표 3개"를 참고하세요.</p>
+      <p><a href="../practice.html">웹에서 SQL 연습</a>에서 <strong>도서관 DB</strong>를 골라 바로 실습할 수 있습니다.
+        표 구조는 <a href="../student-guide.html">실습 가이드</a>를 참고하세요.</p>
+      <div class="callout">날짜 함수(<code>YEAR</code>·<code>MONTH</code>·<code>DAY</code>)는 연습창에서도 동작합니다.</div>
     </section>
 
     <section>
       <h2>실습 과제</h2>
       <div class="callout">
-        아래 문제를 풉니다. <code>week05/answer.sql</code> 파일에 문제 번호와 함께 SQL을 작성하고,
+        아래 문제를 풀어 <code>week05/answer.sql</code>에 문제 번호와 함께 SQL을 작성하고,
         실행 결과를 캡처해 제출하세요.
       </div>
 
       <h3>문제 1</h3>
-      <p><strong>카테고리별 도서 수</strong>를 구하세요. <span class="tag">힌트: GROUP BY category, COUNT(*)</span></p>
+      <p><strong>2024년에 가입</strong>한 회원을 조회하세요. <span class="tag">힌트: join_date BETWEEN '2024-01-01' AND '2024-12-31'</span></p>
 
       <h3>문제 2</h3>
-      <p><strong>출판사별 도서 수</strong>를 구하고, <strong>도서 수가 많은 순</strong>으로 정렬하세요. <span class="tag">힌트: GROUP BY publisher, ORDER BY COUNT(*) DESC</span></p>
+      <p><strong>대출일이 3월</strong>인 대출 기록을 조회하세요. <span class="tag">힌트: MONTH(loan_date) = 3</span></p>
 
       <h3>문제 3</h3>
-      <p><strong>학과별 회원 수</strong>를 구하세요. <span class="tag">힌트: member 를 GROUP BY dept</span></p>
+      <p>제목이 <strong>'데'로 시작</strong>하는 도서를 조회하세요. <span class="tag">힌트: LIKE '데%'</span></p>
 
       <h3>문제 4</h3>
-      <p><strong>회원 유형별(member_type) 회원 수</strong>를 구하세요. <span class="tag">힌트: GROUP BY member_type</span></p>
+      <p>현재 <strong>연체 중</strong>인 대출을 조회하세요. (미반납 + 반납예정일이 오늘 이전) <span class="tag">힌트: return_date IS NULL AND due_date &lt; '2026-07-23'</span></p>
 
       <h3>문제 5</h3>
-      <p>도서가 <strong>4권 이상</strong>인 <strong>카테고리</strong>만 골라, 카테고리와 도서 수를 조회하세요. <span class="tag">힌트: GROUP BY 후 HAVING COUNT(*) &gt;= 4</span></p>
+      <p><strong>이메일이 'minjun'으로 시작</strong>하는 회원을 조회하세요. <span class="tag">힌트: LIKE 'minjun%'</span></p>
     </section>
 
     <section>
@@ -67,8 +69,6 @@
     </section>
   </main>
 
-  <footer class="site">
-    <small>2026 정보시스템개발(ISD) · 데이터베이스 실습 사이트</small>
-  </footer>
+  <footer class="site"><small>데이터베이스 실습 사이트</small></footer>
 </body>
 </html>

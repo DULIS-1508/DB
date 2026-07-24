@@ -9,10 +9,11 @@
 <body>
   <header class="site">
     <div class="wrap">
-      <h1>Week 07 · 조인 (2) 외부 조인과 NULL</h1>
-      <p>한쪽에만 있는 데이터까지 놓치지 않기 (LEFT JOIN)</p>
+      <h1>Week 07 · 테이블 조인</h1>
+      <p>7장 · 여러 표를 연결해서 함께 보기 (INNER · LEFT JOIN)</p>
       <nav class="site">
         <a href="../index.html">HOME</a>
+        <a href="../practice.html">웹에서 SQL 연습</a>
         <a href="../student-guide.html">실습 가이드</a>
         <a href="../guide.html">환경·제출 안내</a>
         <a href="../db/library_schema.sql">도서관 DB 내려받기</a>
@@ -24,39 +25,39 @@
     <section>
       <h2>학습 목표</h2>
       <ul>
-        <li><code>LEFT JOIN</code>으로 기준 표의 모든 행을 남길 수 있다.</li>
-        <li><code>IS NULL</code>로 '연결되지 않은' 행을 찾을 수 있다.</li>
-        <li>외부 조인과 그룹화를 함께 사용할 수 있다.</li>
+        <li><code>JOIN ... ON</code>으로 두세 표를 연결할 수 있다.</li>
+        <li><code>LEFT JOIN</code>으로 한쪽에만 있는 행도 남길 수 있다.</li>
+        <li>조인 결과에 조건·집계를 적용할 수 있다.</li>
       </ul>
     </section>
 
     <section>
       <h2>준비</h2>
-      <p><a href="../guide.html">실습 안내</a>를 참고해 <a href="../db/library_schema.sql">도서관 DB</a>를 불러온 뒤 시작하세요.
-        표 구조가 기억나지 않으면 <a href="../student-guide.html">실습 가이드</a>의 "우리가 쓸 표 3개"를 참고하세요.</p>
+      <p><a href="../practice.html">웹에서 SQL 연습</a>에서 <strong>도서관 DB</strong>를 골라 바로 실습할 수 있습니다.
+        표 구조는 <a href="../student-guide.html">실습 가이드</a>를 참고하세요.</p>
     </section>
 
     <section>
       <h2>실습 과제</h2>
       <div class="callout">
-        아래 문제를 풉니다. <code>week07/answer.sql</code> 파일에 문제 번호와 함께 SQL을 작성하고,
+        아래 문제를 풀어 <code>week07/answer.sql</code>에 문제 번호와 함께 SQL을 작성하고,
         실행 결과를 캡처해 제출하세요.
       </div>
 
       <h3>문제 1</h3>
-      <p><strong>모든 회원</strong>과 각자의 <strong>대출 건수</strong>를 구하세요. (한 번도 안 빌린 회원은 0으로) <span class="tag">힌트: member LEFT JOIN loan, GROUP BY, COUNT(loan_id)</span></p>
+      <p>대출 기록에 <strong>회원 이름과 도서 제목</strong>을 붙여, 이름·제목·대출일을 조회하세요. <span class="tag">힌트: loan JOIN member JOIN book</span></p>
 
       <h3>문제 2</h3>
-      <p><strong>한 번도 대출된 적이 없는 도서</strong>의 제목을 조회하세요. <span class="tag">힌트: book LEFT JOIN loan, WHERE l.loan_id IS NULL</span></p>
+      <p><strong>'김민준'</strong>이 빌린 도서 제목을 모두 조회하세요. <span class="tag">힌트: 조인 후 WHERE m.name = '김민준'</span></p>
 
       <h3>문제 3</h3>
-      <p><strong>한 번도 책을 빌리지 않은 회원</strong>의 이름을 조회하세요. <span class="tag">힌트: member LEFT JOIN loan, WHERE l.loan_id IS NULL</span></p>
+      <p><strong>모든 회원</strong>과 각자의 대출 건수를 구하세요. (안 빌린 회원은 0) <span class="tag">힌트: member LEFT JOIN loan, COUNT(l.loan_id)</span></p>
 
       <h3>문제 4</h3>
-      <p>각 <strong>도서의 대출 횟수</strong>를 구하고(대출 0회 포함), <strong>많이 빌린 순</strong>으로 조회하세요. <span class="tag">힌트: book LEFT JOIN loan, GROUP BY, ORDER BY COUNT DESC</span></p>
+      <p><strong>한 번도 대출되지 않은</strong> 도서 제목을 조회하세요. <span class="tag">힌트: book LEFT JOIN loan, WHERE l.loan_id IS NULL</span></p>
 
       <h3>문제 5</h3>
-      <p>현재 <strong>대출 중(미반납)</strong>인 도서의 <strong>제목과 빌린 회원 이름</strong>을 조회하세요. <span class="tag">힌트: 조인 후 WHERE l.return_date IS NULL</span></p>
+      <p>현재 <strong>대출 중(미반납)</strong>인 도서 제목과 빌린 회원 이름을 조회하세요. <span class="tag">힌트: 조인 후 WHERE l.return_date IS NULL</span></p>
     </section>
 
     <section>
@@ -67,8 +68,6 @@
     </section>
   </main>
 
-  <footer class="site">
-    <small>2026 정보시스템개발(ISD) · 데이터베이스 실습 사이트</small>
-  </footer>
+  <footer class="site"><small>데이터베이스 실습 사이트</small></footer>
 </body>
 </html>
