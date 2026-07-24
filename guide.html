@@ -60,19 +60,49 @@ SELECT COUNT(*) FROM loan;    -- 42</code></pre>
     </section>
 
     <section>
-      <h2>3. 과제 제출 방법 (GitHub Classroom)</h2>
-      <ol class="steps">
-        <li>교수님이 공지한 <strong>GitHub Classroom 초대 링크</strong>를 클릭하면, 본인 전용 과제 저장소가 자동으로 생성됩니다.</li>
-        <li>해당 주차 폴더(예: <code>week01/</code>) 안의 <code>answer.sql</code> 파일에 <strong>작성한 SQL을 채워 넣습니다.</strong></li>
-        <li>실행 결과를 캡처해 같은 폴더에 <code>result.png</code>(또는 .jpg)로 함께 올립니다.</li>
-        <li>변경 사항을 <strong>Commit &amp; Push</strong> 하면 제출 완료입니다. (웹에서 파일을 직접 수정·업로드해도 됩니다.)</li>
+      <h2>3. 과제 제출 방법 (GitHub, 처음이어도 괜찮아요)</h2>
+      <div class="callout ok">
+        😀 <strong>겁먹지 마세요.</strong> 프로그램 설치도, 어려운 명령어도 <strong>필요 없습니다.</strong>
+        인터넷 브라우저(크롬 등)만 있으면 됩니다. 아래 순서대로 <strong>클릭</strong>만 하면 제출 끝!
+      </div>
+
+      <h3>준비 — GitHub 계정 만들기 (딱 한 번)</h3>
+      <ol class="big-steps">
+        <li><a href="https://github.com/signup" target="_blank" rel="noopener">github.com/signup</a>에 접속해
+          이메일·비밀번호·아이디(username)를 입력하고 가입합니다. (무료)</li>
+        <li>가입한 이메일로 온 인증 메일의 확인 버튼을 누르면 준비 끝입니다.</li>
       </ol>
+
+      <h3>과제 제출 — 매주 이렇게</h3>
+      <ol class="big-steps">
+        <li><strong>초대 링크 열기</strong> — 교수님이 공지한 <strong>과제 초대 링크</strong>를 클릭합니다.
+          <br /><span class="muted-hint">처음 한 번은 "Authorize"(권한 허용)와 본인 이름 선택 화면이 나올 수 있어요. 안내대로 눌러 주세요.</span></li>
+        <li><strong>과제 받기</strong> — <strong>“Accept this assignment”</strong>(과제 수락) 초록 버튼을 누르고 잠깐(10~30초) 기다리면,
+          <strong>나만의 과제 저장소</strong>가 자동으로 만들어집니다. 새로 생긴 저장소 주소를 클릭해 들어갑니다.</li>
+        <li><strong>답 파일 열기</strong> — 저장소에서 이번 주 폴더(예: <code>week03</code>)를 누르고,
+          그 안의 <code>answer.sql</code> 파일을 클릭합니다.</li>
+        <li><strong>답 작성하기</strong> — 파일 화면 오른쪽 위의 <strong>연필 아이콘(✏️ Edit)</strong>을 누르면 편집 화면이 열립니다.
+          여기에 작성한 SQL을 붙여넣거나 입력합니다.
+          <pre class="sql-demo"><span class="cmt">-- 문제 1.</span>
+<span class="kw">SELECT</span> title, author <span class="kw">FROM</span> book <span class="kw">WHERE</span> category = <span class="col">'컴퓨터'</span>;</pre></li>
+        <li><strong>저장(제출)하기</strong> — 오른쪽 위 초록색 <strong>“Commit changes…”</strong> 버튼을 누르고,
+          다음 창에서 다시 <strong>“Commit changes”</strong>를 누르면 <strong>제출 완료!</strong> 🎉</li>
+        <li><strong>결과 캡처 올리기</strong> — <a href="practice.html">웹 연습창</a>에서 실행한 결과 화면을 캡처한 뒤,
+          저장소 폴더에서 <strong>“Add file → Upload files”</strong>로 <code>result.png</code>를 올리고 다시 Commit 합니다.</li>
+      </ol>
+
+      <div class="callout">
+        🔁 <strong>마감 전이면 몇 번이든 다시 고칠 수 있어요.</strong> 답을 수정하고 다시 “Commit changes”를 누르면
+        가장 최근 내용으로 갱신됩니다. 틀릴까 봐 걱정하지 말고 편하게 제출하세요.
+      </div>
       <div class="callout ok">
         <strong>제출 체크리스트</strong>
-        <br />☑ <code>answer.sql</code>에 각 문제 번호와 쿼리를 함께 작성했는가
-        <br />☑ 쿼리가 오류 없이 실행되는가
-        <br />☑ 결과 캡처를 첨부했는가
+        <br />☑ <code>answer.sql</code>에 문제 번호와 SQL을 함께 적었는가
+        <br />☑ SQL이 오류 없이 실행되는가 (<a href="practice.html">웹 연습창</a>에서 미리 확인)
+        <br />☑ 결과 캡처(<code>result.png</code>)를 올렸는가
+        <br />☑ 마지막에 “Commit changes”를 눌렀는가
       </div>
+      <p class="muted-hint">※ 과제 초대 링크는 <strong>수강신청이 확정된 뒤</strong> 교수님이 공지합니다. 그때 위 순서대로 진행하면 됩니다.</p>
     </section>
 
     <section>
