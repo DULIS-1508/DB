@@ -6,6 +6,36 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+  <!-- 비밀번호 잠금 (간단 잠금) -->
+  <style>
+    #gate{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;
+      background:rgba(245,245,243,.35);backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);}
+    #gate.hidden{display:none;}
+    #gate .card{background:#fff;border:1px solid rgba(0,0,0,.1);border-radius:16px;padding:30px 26px;
+      max-width:340px;width:88%;text-align:center;box-shadow:0 12px 40px rgba(0,0,0,.18);
+      font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;}
+    #gate .emoji{font-size:2rem;}
+    #gate h2{margin:8px 0 4px;font-size:1.2rem;color:#1b1d23;}
+    #gate p{margin:0 0 16px;color:#555;font-size:.92rem;}
+    #gate input{width:100%;box-sizing:border-box;padding:11px 13px;border:1px solid #ccc;
+      border-radius:10px;font-size:1rem;outline:none;}
+    #gate input:focus{border-color:#2f6f78;}
+    #gate button{width:100%;margin-top:10px;padding:11px;border:0;border-radius:10px;
+      background:#2f6f78;color:#fff;font-size:1rem;font-weight:600;cursor:pointer;}
+    #gate .err{color:#c0392b;font-size:.85rem;min-height:1.2em;margin-top:10px;}
+    body.locked{overflow:hidden;}
+  </style>
+  <div id="gate">
+    <div class="card">
+      <div class="emoji">🔒</div>
+      <h2>잠긴 페이지</h2>
+      <p>내용을 확인하려면 비밀번호를 입력하세요.</p>
+      <input id="gatePw" type="password" placeholder="비밀번호" autocomplete="off" />
+      <button id="gateBtn">확인</button>
+      <div class="err" id="gateErr"></div>
+    </div>
+  </div>
+
   <header>
     <h1>나의 웹 포트폴리오</h1>
     <nav>
@@ -49,5 +79,31 @@
   <footer>
     <small>2026 정보시스템개발 수업</small>
   </footer>
+
+  <script>
+    (function () {
+      // sha256("123456789")
+      var HASH = "15e2b0d3c33891ebb0f1ef609ec419420c20e320ce94c65fbc8c3312448eb225";
+      var gate = document.getElementById("gate");
+      var pw = document.getElementById("gatePw");
+      var btn = document.getElementById("gateBtn");
+      var err = document.getElementById("gateErr");
+      function unlock() { gate.classList.add("hidden"); document.body.classList.remove("locked"); }
+      if (sessionStorage.getItem("db-unlocked") === "1") { unlock(); return; }
+      document.body.classList.add("locked");
+      async function sha256(s) {
+        var b = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(s));
+        return [...new Uint8Array(b)].map(x => x.toString(16).padStart(2, "0")).join("");
+      }
+      async function tryit() {
+        var h = await sha256(pw.value);
+        if (h === HASH) { sessionStorage.setItem("db-unlocked", "1"); unlock(); }
+        else { err.textContent = "비밀번호가 올바르지 않습니다."; }
+      }
+      btn.addEventListener("click", tryit);
+      pw.addEventListener("keydown", function (e) { if (e.key === "Enter") tryit(); });
+      pw.focus();
+    })();
+  </script>
 </body>
 </html>
