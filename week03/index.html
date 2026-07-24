@@ -9,8 +9,8 @@
 <body>
   <header class="site">
     <div class="wrap">
-      <h1>Week 03 · WHERE 조건과 정렬(ORDER BY)</h1>
-      <p>도서관 데이터베이스 실습</p>
+      <h1>Week 03 · WHERE 조건과 정렬</h1>
+      <p>조건으로 걸러내고 원하는 순서로 줄 세우기</p>
       <nav class="site">
         <a href="../index.html">HOME</a>
         <a href="../student-guide.html">실습 가이드</a>
@@ -22,12 +22,47 @@
 
   <main>
     <section>
-      <h2>안내</h2>
-      <div class="callout warn">
-        이 주차의 과제는 <strong>준비 중</strong>입니다. 강의 진행에 맞춰 교재 챕터와 함께 업데이트됩니다.
+      <h2>학습 목표</h2>
+      <ul>
+        <li><code>WHERE</code>로 조건에 맞는 행만 조회할 수 있다.</li>
+        <li><code>LIKE</code>, <code>BETWEEN</code>, <code>IN</code>으로 다양한 조건을 표현할 수 있다.</li>
+        <li><code>ORDER BY</code>로 오름차순/내림차순 정렬할 수 있다.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>준비</h2>
+      <p><a href="../guide.html">실습 안내</a>를 참고해 <a href="../db/library_schema.sql">도서관 DB</a>를 불러온 뒤 시작하세요.
+        표 구조가 기억나지 않으면 <a href="../student-guide.html">실습 가이드</a>의 "우리가 쓸 표 3개"를 참고하세요.</p>
+    </section>
+
+    <section>
+      <h2>실습 과제</h2>
+      <div class="callout">
+        아래 문제를 풉니다. <code>week03/answer.sql</code> 파일에 문제 번호와 함께 SQL을 작성하고,
+        실행 결과를 캡처해 제출하세요.
       </div>
-      <p>실습 소재는 공통 <a href="../db/library_schema.sql">도서관 데이터베이스</a>를 사용합니다.
-        제출 방법은 <a href="../guide.html">실습 안내</a>를 참고하세요.</p>
+
+      <h3>문제 1</h3>
+      <p><strong>카테고리가 '컴퓨터'</strong>인 도서의 <strong>제목과 저자</strong>를 조회하세요. <span class="tag">힌트: WHERE category = '컴퓨터'</span></p>
+
+      <h3>문제 2</h3>
+      <p><strong>2020년(포함) 이후</strong>에 출판된 도서를 <strong>출판연도 내림차순</strong>으로 조회하세요. <span class="tag">힌트: WHERE pub_year &gt;= 2020, ORDER BY ... DESC</span></p>
+
+      <h3>문제 3</h3>
+      <p>제목에 <strong>'데이터'</strong>가 들어간 도서의 제목을 조회하세요. <span class="tag">힌트: LIKE '%데이터%'</span></p>
+
+      <h3>문제 4</h3>
+      <p>출판연도가 <strong>2015년부터 2020년 사이</strong>인 도서를 <strong>출판연도 오름차순</strong>으로 조회하세요. <span class="tag">힌트: BETWEEN 2015 AND 2020</span></p>
+
+      <h3>문제 5</h3>
+      <p>카테고리가 <strong>'문학' 또는 '역사'</strong>인 도서의 제목과 카테고리를 조회하세요. <span class="tag">힌트: IN ('문학','역사')</span></p>
+    </section>
+
+    <section>
+      <h2>제출</h2>
+      <p><code>week03/answer.sql</code>에 답을 작성 → 결과 캡처(<code>result.png</code>) 첨부 →
+        <strong>Commit &amp; Push</strong>. 자세한 방법은 <a href="../guide.html">환경·제출 안내</a>를 참고하세요.</p>
       <p><a class="btn ghost" href="../index.html">← 전체 주차로 돌아가기</a></p>
     </section>
   </main>
