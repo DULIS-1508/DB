@@ -1,4 +1,4 @@
-// CH02 · 2.2 파이썬 패키지 설치
+// 01장 · 02. 파이썬 시작 · 2.2 파이썬 패키지 설치
 const si = require("react-icons/si");
 const fa = require("react-icons/fa");
 const { T, F, W, MX, CW, icon, header, footer, card, tip, iconCircle, numBadge, txt, codeBlock, explainList, outputBox, hlRuns } = require("./lib");

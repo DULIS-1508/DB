@@ -1,4 +1,4 @@
-// CH02 파이썬 시작 — intro + 2.1 파이썬 설치
+// 01장 · 02. 파이썬 시작 — intro + 2.1 파이썬 설치
 const pptxgen = require("pptxgenjs");
 const si = require("react-icons/si");
 const fa = require("react-icons/fa");
@@ -12,7 +12,7 @@ const ANA = "Anaconda Documentation (anaconda.com/docs)";
 
 const pres = new pptxgen();
 pres.layout = "LAYOUT_WIDE";
-pres.title = "비즈니스 데이터 분석 with Python - 02장. 파이썬 시작";
+pres.title = "비즈니스 데이터 분석 with Python - 01장. 파이썬 준비 · 02. 파이썬 시작";
 pres.author = "김진성";
 let curSection = null;
 function sec(title) { curSection = title; pres.addSection({ title }); }
@@ -72,7 +72,7 @@ function stepFlow(s, y, steps, h = 1.3) {
     txt(s, "PYTHON FOR BUSINESS DATA ANALYSIS", { x: 1.0, y: 1.6, w: 9, h: 0.4, fontFace: F.sb, fontSize: 18, color: T.accent2, charSpacing: 2 });
     txt(s, "비즈니스 데이터 분석 with Python", { x: 1.0, y: 2.1, w: 10, h: 0.9, fontFace: F.xb, fontSize: 44 });
     s.addShape("rect", { x: 1.0, y: 3.25, w: 1.6, h: 0.04, fill: { color: T.accent }, line: { type: "none" } });
-    txt(s, "02장. 파이썬 시작", { x: 1.0, y: 3.55, w: 9, h: 0.7, fontFace: F.b, fontSize: 32 });
+    txt(s, "01장. 파이썬 준비 — 02. 파이썬 시작", { x: 1.0, y: 3.55, w: 9, h: 0.7, fontFace: F.b, fontSize: 32 });
     txt(s, "2.1 파이썬 설치  /  2.2 파이썬 패키지 설치  /  2.3 Google Colab", { x: 1.0, y: 4.3, w: 9.5, h: 0.4, fontSize: 18, color: T.text });
     txt(s, "출처 : " + SRC + "  ·  각 공식 문서로 보완", { x: 1.0, y: 6.3, w: 10, h: 0.35, fontSize: 13, color: T.muted });
     footer(s);
@@ -80,8 +80,8 @@ function stepFlow(s, y, steps, h = 1.3) {
   // ================= Contents =================
   {
     const s = add();
-    header(s, "비즈니스 데이터 분석 with Python", "Contents — 02장. 파이썬 시작");
-    txt(s, "실습 파일 : Chap02_파이썬시작_실습.ipynb", { x: MX, y: 1.6, w: 8, h: 0.4, fontFace: F.sb, fontSize: 16, color: T.accent2 });
+    header(s, "비즈니스 데이터 분석 with Python", "Contents — 01장 · 02. 파이썬 시작");
+    txt(s, "실습 파일 : Chap01_파이썬준비_실습.ipynb", { x: MX, y: 1.6, w: 8, h: 0.4, fontFace: F.sb, fontSize: 16, color: T.accent2 });
     const items = [["2.1", "파이썬 설치", "내 컴퓨터에 Anaconda 설치하고\n첫 코드 실행하기", si.SiAnaconda], ["2.2", "파이썬 패키지 설치", "pip · conda 로\n필요한 도구 추가하기", fa.FaBoxOpen], ["2.3", "Google Colab", "설치 없이 웹에서\n파이썬 쓰기 (우리 수업!)", si.SiGooglecolab]];
     const cw = (CW - 0.6) / 3;
     for (let i = 0; i < 3; i++) {
@@ -98,7 +98,7 @@ function stepFlow(s, y, steps, h = 1.3) {
   // ================= Mission =================
   {
     const s = add();
-    header(s, "02장 시작하기", "오늘의 미션 : 내 손으로 첫 파이썬 코드 실행하기");
+    header(s, "02. 파이썬 시작", "오늘의 미션 : 내 손으로 첫 파이썬 코드 실행하기");
     const lw = 6.2;
     card(s, MX, 1.7, lw, 4.35, { fill: T.card });
     txt(s, "오늘 수업이 끝나면 할 수 있어요", { x: MX + 0.3, y: 1.85, w: lw - 0.6, h: 0.45, fontFace: F.b, fontSize: 18, color: T.accent2 });
@@ -120,7 +120,7 @@ function stepFlow(s, y, steps, h = 1.3) {
   // ================= 3 ways =================
   {
     const s = add();
-    header(s, "02장 시작하기", "파이썬을 쓰는 3가지 방법 — 큰 그림 먼저");
+    header(s, "02. 파이썬 시작", "파이썬을 쓰는 3가지 방법 — 큰 그림 먼저");
     const ways = [[si.SiPython, "#FACC15", "① 파이썬만 설치", "python.org", "빈 주방", "언어 본체만 설치. 필요한 도구는 하나씩 직접 설치", "가볍다 / 직접 챙길 게 많다", false],
       [si.SiAnaconda, "#44A833", "② Anaconda 설치", "anaconda.com", "풀옵션 주방", "파이썬 + 분석 패키지 + Jupyter 를 한 번에 설치", "편하다 / 용량이 크다", false],
       [si.SiGooglecolab, "#F9AB00", "③ Google Colab", "colab.research.google.com", "공유 주방 (빌려 쓰기)", "설치 없이 웹 브라우저에서 바로 사용", "제일 쉽다 / 인터넷 필요", true]];

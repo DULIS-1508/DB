@@ -1,4 +1,4 @@
-// CH02 · 2.3 Google Colab + wrap-up
+// 01장 · 02. 파이썬 시작 · 2.3 Google Colab + wrap-up
 const si = require("react-icons/si");
 const fa = require("react-icons/fa");
 const { T, F, W, MX, CW, icon, header, footer, card, tip, iconCircle, numBadge, txt, codeBlock, explainList, outputBox, browserWin, dark, hlRuns } = require("./lib");
@@ -49,7 +49,7 @@ module.exports = async function ({ pres, add, sec, divider, summary, stepFlow, S
     const c = browserWin(s, MX, 3.7, bw, 2.45, "https://colab.research.google.com");
     s.addImage({ data: await icon(si.SiGooglecolab, "#F9AB00"), x: c.x + 0.1, y: c.y + 0.1, w: 0.45, h: 0.45 });
     s.addShape("rect", { x: c.x + 0.7, y: c.y + 0.12, w: 3.0, h: 0.4, fill: { color: "FFFFFF" }, line: { color: "2563EB", width: 1.5 } });
-    dark(s, "Chap02_파이썬시작_실습.ipynb", { x: c.x + 0.8, y: c.y + 0.12, w: 2.9, h: 0.4, fontSize: 12, valign: "middle" });
+    dark(s, "Chap01_파이썬준비_실습.ipynb", { x: c.x + 0.8, y: c.y + 0.12, w: 2.9, h: 0.4, fontSize: 12, valign: "middle" });
     numBadge(s, 4, c.x + 3.8, c.y + 0.16, 0.3);
     dark(s, "파일   수정   보기   삽입   런타임   도구   도움말", { x: c.x + 0.7, y: c.y + 0.6, w: 5.5, h: 0.3, fontSize: 11, color: "475569" });
     s.addShape("roundRect", { x: c.x + 0.1, y: c.y + 1.05, w: c.w - 0.2, h: 0.55, rectRadius: 0.06, fill: { color: "F1F5F9" }, line: { color: "CBD5E1", width: 0.75 } });
@@ -59,7 +59,7 @@ module.exports = async function ({ pres, add, sec, divider, summary, stepFlow, S
     card(s, rx, 3.7, rw, 2.45, { fill: T.card2 });
     txt(s, [{ text: "파일은 어디에 저장될까?", options: { fontFace: F.b, color: T.yellow, breakLine: true } }, { text: "내 구글 드라이브 →", options: { breakLine: true } }, { text: "'Colab Notebooks' 폴더", options: { fontFace: F.sb, color: T.accent2, breakLine: true } }, { text: "에 자동으로 저장됩니다." }],
       { x: rx + 0.25, y: 3.7, w: rw - 0.5, h: 2.45, fontSize: 15, valign: "middle", paraSpaceAfter: 4 });
-    tip(s, MX, 6.5, CW, 0.4, "이름 규칙", "Chap02_파이썬시작_실습.ipynb 처럼 장 번호를 붙이면 나중에 찾기 쉬워요.", T.cyan, 14);
+    tip(s, MX, 6.5, CW, 0.4, "이름 규칙", "Chap01_파이썬준비_실습.ipynb 처럼 장 번호를 붙이면 나중에 찾기 쉬워요.", T.cyan, 14);
     footer(s, COLAB);
   }
   {
@@ -69,7 +69,7 @@ module.exports = async function ({ pres, add, sec, divider, summary, stepFlow, S
     const c = browserWin(s, MX, 1.65, bw, 4.5, "colab.research.google.com/drive/…");
     // top bar
     s.addImage({ data: await icon(si.SiGooglecolab, "#F9AB00"), x: c.x + 0.1, y: c.y + 0.05, w: 0.4, h: 0.4 });
-    dark(s, "Chap02_파이썬시작_실습.ipynb", { x: c.x + 0.6, y: c.y + 0.02, w: 3.5, h: 0.3, fontSize: 12, fontFace: F.b, valign: "middle" });
+    dark(s, "Chap01_파이썬준비_실습.ipynb", { x: c.x + 0.6, y: c.y + 0.02, w: 3.5, h: 0.3, fontSize: 12, fontFace: F.b, valign: "middle" });
     dark(s, "파일  수정  보기  삽입  런타임  도구  도움말", { x: c.x + 0.6, y: c.y + 0.3, w: 4.5, h: 0.25, fontSize: 10, color: "475569", valign: "middle" });
     s.addShape("roundRect", { x: c.x + c.w - 1.2, y: c.y + 0.08, w: 1.1, h: 0.36, rectRadius: 0.18, fill: { color: "2563EB" }, line: { type: "none" } });
     txt(s, "공유", { x: c.x + c.w - 1.2, y: c.y + 0.08, w: 1.1, h: 0.36, fontFace: F.b, fontSize: 11, align: "center", valign: "middle" });
@@ -288,14 +288,14 @@ module.exports = async function ({ pres, add, sec, divider, summary, stepFlow, S
     ["셀", "코드 셀(실행) · 텍스트 셀(설명) — Shift + Enter 로 실행"],
     ["데이터 불러오기", "업로드(/content, 임시) · 드라이브 연결(/content/drive/MyDrive, 영구)"],
     ["런타임", "구글 컴퓨터를 빌리는 시간 — 끊기면 변수 · 업로드 파일은 다시!"],
-  ], "02장 정리와 실습 체크리스트");
+  ], "02. 파이썬 시작 정리와 실습 체크리스트");
 
   // ---- wrap-up
   sec("마무리");
   {
     const s = add();
-    header(s, "02장 마무리", "실습 체크리스트 — 오늘 직접 해 보기");
-    const tasks = [["Colab 접속", "colab.research.google.com 에 구글 계정으로 로그인"], ["새 노트 만들기", "이름을 Chap02_파이썬시작_실습 으로 변경"], ["첫 코드 실행", "print(\"Hello, Colab!\") 입력 → Shift + Enter"], ["텍스트 셀 추가", "'2장 실습' 제목 쓰기 (Ctrl + M → M)"], ["패키지 설치", "!pip install wordcloud → Successfully 확인"], ["드라이브 연결", "drive.mount('/content/drive') 실행 → 허용"]];
+    header(s, "02. 파이썬 시작 마무리", "실습 체크리스트 — 오늘 직접 해 보기");
+    const tasks = [["Colab 접속", "colab.research.google.com 에 구글 계정으로 로그인"], ["새 노트 만들기", "이름을 Chap01_파이썬준비_실습 으로 변경"], ["첫 코드 실행", "print(\"Hello, Colab!\") 입력 → Shift + Enter"], ["텍스트 셀 추가", "'2장 실습' 제목 쓰기 (Ctrl + M → M)"], ["패키지 설치", "!pip install wordcloud → Successfully 확인"], ["드라이브 연결", "drive.mount('/content/drive') 실행 → 허용"]];
     const cw = (CW - 0.3) / 2;
     for (let i = 0; i < 6; i++) {
       const [h, d] = tasks[i];
@@ -310,7 +310,7 @@ module.exports = async function ({ pres, add, sec, divider, summary, stepFlow, S
   }
   {
     const s = add();
-    header(s, "02장 마무리", "오늘 배운 것 한 장 요약");
+    header(s, "02. 파이썬 시작 마무리", "오늘 배운 것 한 장 요약");
     const q = [["2.1", "어떻게 설치?", "Anaconda : Just Me · 영어 경로 · PATH 체크 안 함 → Prompt 에서 버전 확인"], ["2.2", "도구 추가는?", "pip / conda install — Colab 은 !pip install, 오류는 마지막 줄부터 읽기"], ["2.3", "Colab 은?", "셀 실행(Shift+Enter) · 순서 주의 · 드라이브 연결로 파일 불러오기"]];
     q.forEach(([n, h, d], i) => {
       const y = 1.75 + i * 1.3;
@@ -319,14 +319,14 @@ module.exports = async function ({ pres, add, sec, divider, summary, stepFlow, S
       txt(s, h, { x: MX + 1.25, y, w: 2.4, h: 1.1, fontFace: F.b, fontSize: 18, valign: "middle" });
       txt(s, d, { x: MX + 3.7, y, w: CW - 3.9, h: 1.1, fontSize: 16, color: T.text, valign: "middle" });
     });
-    tip(s, MX, 5.85, CW, 0.75, "다음 시간", "Colab 에서 본격적으로 코드를 씁니다 — 변수와 데이터 유형 (숫자 · 문자 · True/False)", T.cyan, 16);
+    tip(s, MX, 5.85, CW, 0.75, "다음 시간", "02장. 변수와 데이터 유형 — Colab 에서 변수와 연산자를 직접 써 봅니다", T.cyan, 16);
     footer(s);
   }
   {
     const s = add();
-    header(s, "02장 마무리", "참고문헌 및 참고자료");
+    header(s, "02. 파이썬 시작 마무리", "참고문헌 및 참고자료");
     const refs = [
-      "김진성. 「비즈니스 데이터 분석 with Python」 02. 파이썬 시작. WikiDocs. https://wikidocs.net/205226 · /287232 · /205404 · /232742",
+      "김진성. 「비즈니스 데이터 분석 with Python」 01장. 파이썬 준비 — 02. 파이썬 시작. WikiDocs. https://wikidocs.net/205226 · /287232 · /205404 · /232742",
       "Anaconda. Installing Anaconda Distribution. https://www.anaconda.com/docs/getting-started/anaconda/install",
       "Anaconda. Anaconda Distribution 2025.x release notes. https://www.anaconda.com/docs/getting-started/anaconda/release/2025.x",
       "Anaconda. Anaconda Navigator. https://www.anaconda.com/docs/tools/anaconda-navigator",
@@ -347,7 +347,7 @@ module.exports = async function ({ pres, add, sec, divider, summary, stepFlow, S
     s.addShape("rect", { x: 0, y: 0, w: 0.08, h: 7.5, fill: { color: T.accent }, line: { type: "none" } });
     s.addImage({ data: await icon(si.SiPython, "#1E2A5A"), x: 8.6, y: 1.6, w: 4.0, h: 4.0 });
     txt(s, "감사합니다.", { x: 1.0, y: 2.6, w: 8, h: 1.1, fontFace: F.xb, fontSize: 54 });
-    txt(s, "비즈니스 데이터 분석 with Python  ·  02장. 파이썬 시작", { x: 1.0, y: 3.8, w: 9, h: 0.5, fontSize: 20, color: T.text });
+    txt(s, "비즈니스 데이터 분석 with Python  ·  01장. 파이썬 준비 · 02. 파이썬 시작", { x: 1.0, y: 3.8, w: 9, h: 0.5, fontSize: 20, color: T.text });
     txt(s, "질문은 언제든 환영합니다", { x: 1.0, y: 4.5, w: 8, h: 0.5, fontSize: 18, color: T.accent2 });
     footer(s);
   }
