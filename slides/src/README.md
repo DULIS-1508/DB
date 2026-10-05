@@ -8,6 +8,8 @@
 - `part3.js` : 1.4 파이썬이 필요한 이유 · 마무리 · 참고문헌
 - `build03.js` : 02장 01. 변수와 연산자 (`c3b.js` 1.2·1.3, `c3c.js` 마무리) — 공통 틀은 `deck.js`
 - `build04.js` : 02장 02. 데이터 형식 (`c4b.js` 2.3·2.4 함수, `c4c.js` 2.4 메서드·마무리)
+- `build05.js` : 02장 03. 데이터 구조 — 3.1 · 3.2 리스트 (`c5b.js` 3.3 튜플 · 3.4 딕셔너리, `c5c.js` 3.5 집합 · 3.6 부울 · 마무리)
+- `build06.js` + `pbl_data.js` : 02장 04. PBL 연습문제 — 인자 `answer` 를 주면 정답 · 해설판
 - `build02.js` : 01장 02. 파이썬 시작 — 표지 · 2.1 파이썬 설치 (`c2b.js` 2.2 패키지 설치, `c2c.js` 2.3 Google Colab · 마무리)
 
 ```bash
@@ -16,6 +18,9 @@ node build.js BizDataAnalysis_CH01_01_파이썬이해.pptx
 node build02.js BizDataAnalysis_CH01_02_파이썬시작.pptx
 node build03.js BizDataAnalysis_CH02_01_변수와연산자.pptx
 node build04.js BizDataAnalysis_CH02_02_데이터형식.pptx
+node build05.js BizDataAnalysis_CH02_03_데이터구조.pptx
+node build06.js BizDataAnalysis_CH02_04_PBL연습문제.pptx
+node build06.js BizDataAnalysis_CH02_04_PBL연습문제_정답.pptx answer
 ```
 
 글꼴 Paperlogy 가 설치되어 있어야 화면과 같이 보입니다.
