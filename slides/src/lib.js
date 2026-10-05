@@ -126,3 +126,16 @@ function outputBox(slide, x, y, w, h, text, opts = {}) {
 }
 
 module.exports = { T, F, W, H, MX, CW, icon, header, footer, card, tip, iconCircle, numBadge, txt, codeBlock, explainList, outputBox, hlLine };
+
+// ---- UI mock helpers (CH02) ----
+function browserWin(slide, x, y, w, h, url) {
+  slide.addShape("roundRect", { x, y, w, h, rectRadius: 0.1, fill: { color: "F8FAFC" }, line: { color: T.muted, width: 0.75 } });
+  slide.addShape("rect", { x: x + 0.02, y: y + 0.02, w: w - 0.04, h: 0.42, fill: { color: "E2E8F0" }, line: { type: "none" } });
+  ["F87171", "FBBF24", "34D399"].forEach((c, i) => slide.addShape("ellipse", { x: x + 0.15 + i * 0.2, y: y + 0.15, w: 0.12, h: 0.12, fill: { color: c }, line: { type: "none" } }));
+  slide.addShape("roundRect", { x: x + 0.85, y: y + 0.08, w: w - 1.05, h: 0.28, rectRadius: 0.14, fill: { color: "FFFFFF" }, line: { type: "none" } });
+  slide.addText(url, { x: x + 1.0, y: y + 0.08, w: w - 1.3, h: 0.28, fontFace: F.r, fontSize: 11, color: "334155", valign: "middle", margin: 0, isTextBox: true });
+  return { x: x + 0.15, y: y + 0.55, w: w - 0.3, h: h - 0.65 };
+}
+function dark(slide, text, o) { txt(slide, text, Object.assign({ color: "1E293B" }, o)); }
+function hlRuns(code) { return hlLine(code).map((r) => ({ text: r.t, options: { color: r.c } })); }
+module.exports.browserWin = browserWin; module.exports.dark = dark; module.exports.hlRuns = hlRuns;
